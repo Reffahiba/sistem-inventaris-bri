@@ -1,6 +1,6 @@
 export default function Sidebar() {
     return (
-        <aside className="w-64 bg-gray-100 h-screen p-4">
+        <aside className="w-64 bg-gray-100 h-full top-0 left-0 z-10 p-4 flex flex-col justify-start">
             <ul className="space-y-2">
                 <li>
                     <a href="/dashboard" className="block hover:text-blue-500">

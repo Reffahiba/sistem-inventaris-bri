@@ -1,6 +1,6 @@
 export default function Navbar() {
     return (
-        <nav className="bg-blue-500 text-black p-4 flex justify-between">
+        <nav className="bg-blue-500 text-black p-4 flex flex-col flex-1 ml-64">
             <h1 className="text-xl font-bold">
                 Navbar - Sistem Permintaan Barang
             </h1>
