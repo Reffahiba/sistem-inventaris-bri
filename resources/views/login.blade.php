@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="{{ asset("assets/Pattern.png") }}" alt="pattern" class="w-full h-auto">
+    <!-- <img src="{{ asset("assets/Pattern.png") }}" alt="pattern" class="w-full h-auto"> -->
+     Ivan Aditya
 </body>
 </html>
