@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    Hello World
+    <img src="{{ asset("assets/Pattern.png") }}" alt="pattern" class="w-full h-auto">
 </body>
 </html>
