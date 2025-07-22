@@ -1,36 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
-    <title>Document</title>
-</head>
-<body class="bg-[url('{{ asset('assets/img/Pattern.png') }}')] bg-cover bg-center w-screen">
-    <div class="container mx-auto bg-yellow-50 h-screen flex justify-center items-center">
-        <div class="w-full max-w-4xl">
-            <div class="bg-blue-100 rounded-xl overflow-hidden flex shadow-2xl border border-blue-500">
-                <div class="w-3/4 justify-center items-center">
-                    
-                </div>
-                <div class="w-1/2 justify-center items-center">
-                    <div class="flex flex-col justify-center items-center mr-3 mt-5">
-                        <h1>LOGIN</h1>
-                        {{-- <form action="{{ route('proses-login') }}" method="POST"> --}}
-                            @csrf
-                            <div class="flex flex-col justify-center items-center">
-                                <input type="username" name="username" id="username" placeholder="Masukkan Username" class="outline-none px-3 py-2 rounded-full my-2 text-center">
-                                <input type="password" name="password" id="password" placeholder="Masukkan Password" class="outline-none px-3 py-2 rounded-full my-2 text-center">
-                                <button type="submit" class="bg-white text-blue-600 text-lg rounded-full my-3 px-6 font-semibold">LOGIN</button>
-                            </div>
-                        {{-- </form> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
+@extends('layouts.app')
+
+@section('content')
+<div class="min-h-screen flex">
+    <div class="w-1/2 bg-gradient-to-br from-primary to-[#036ED1] flex items-center justify-center">
+        <img src="{{ asset('assets/illustration.png') }}" alt="login-illustration" class="w-2/3">
     </div>
 
-</body>
-</html>
+    <div class="w-1/2 flex flex-col justify-center px-16 bg-white">
+        <div class="w-full max-w-md mx-auto space-y-6">
+            <div>
+                <h1 class="text-3xl font-semibold text-gray-800">
+                    Welcome Back! <span class="inline-block">👋</span>
+                </h1>
+                <p class="text-gray-500 mt-2">Login to access your account</p>
+            </div>
+            
+            <form class="space-y-5">
+                {{-- Email --}}
+                <label for="Email" class="relative block">
+                    <div class="flex items-center relative">
+                        <img src="{{ asset('assets/user.png') }}" alt="User Icon" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <input
+                            type="email"
+                            id="Email"
+                            name="email"
+                            placeholder=" "
+                            class="peer w-full pl-10 pr-4 py-3 bg-white border border-gray-200 text-sm text-gray-800
+                                  rounded-lg shadow-sm placeholder-transparent focus:outline-none focus:ring-2 
+                                  focus:ring-primary-400 transition"
+                        />
+                    </div>
+                    <span
+                        class="absolute left-10 top-3 text-sm text-gray-500 transition-all 
+                              peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base 
+                              peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm 
+                              peer-focus:text-gray-600 bg-white px-1"
+                    >
+                        Email
+                    </span>
+                </label>
+
+                {{-- Password --}}
+                <label for="password" class="relative block mt-4">
+                    <div class="flex items-center relative">
+                        <img src="{{ asset('assets/password.png') }}" alt="Password Icon" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder=" "
+                            class="peer w-full pl-10 pr-4 py-3 bg-white border border-gray-200 text-sm text-gray-800
+                                  rounded-lg shadow-sm placeholder-transparent focus:outline-none focus:ring-2 
+                                  focus:ring-primary-400 transition"
+                        />
+                    </div>
+                    <span
+                        class="absolute left-10 top-3 text-sm text-gray-500 transition-all 
+                              peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base 
+                              peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm 
+                              peer-focus:text-gray-600 bg-white px-1"
+                    >
+                        Password
+                    </span>
+                </label>
+
+                {{-- Remember Me --}}
+                <div class="flex items-center justify-between text-sm text-gray-600">
+                    <label class="inline-flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="remember" class="accent-secondary w-4 h-4" />
+                        Remember me
+                    </label>
+                    <a href="#" 
+                      class="underline decoration-gray-400 underline-offset-2 text-sm text-gray-500 hover:text-primary-600 transition">
+                      Forgot Password?
+                    </a>
+                </div>
+
+                {{-- Button --}}
+                <button
+                  type="submit"
+                  class="w-full mt-4 rounded-md text-white px-4 py-2 shadow-md transition duration-300 
+                    [background:radial-gradient(circle_at_center,_#F46F23,_#d35400)] 
+                    hover:shadow-orange-400/70 hover:shadow-lg 
+                    focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-60"
+                >
+                  Login
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-600">
+                No account yet? <a href="#" class="text-primary font-medium hover:underline">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</div>
+@endsection
